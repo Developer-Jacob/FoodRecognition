@@ -5,57 +5,76 @@ from collections import defaultdict
 import PIL.Image as pil_image
 from torch.utils.data import Dataset
 import matplotlib.pyplot as plt
+import torchvision.transforms as transforms
+import numpy as np
+from tqdm import tqdm
 
-ROOT_PATH = "C:/Users/lim/Desktop/kfood"
+ROOT_PATH = "D:/kfood"
+# ROOT_PATH = "C:/Users/lim/Desktop/kfood"
 
+transform = transforms.Compose([transforms.ToPILImage(),
+                                # transforms.Resize((256,256)),
+                                transforms.ToTensor()])
 
 class ImageDataSet(Dataset):
-    def __init__(self, root_path, transforms=None):
-        self.transforms = transforms
-        self.train_set, self.test_set  = self.loadImage(root_path)
-
-    def loadImage(self, root_path):
-        train_images = {}
-        test_images = {}
-        boxes = defaultdict()
-        for major_class in os.listdir(root_path):
-            major_path = os.path.join(root_path, major_class)
-            major_train_dictionry = {}
-            major_test_dictionry = {}
-            for minor_class in os.listdir(major_path):
-                minor_path = os.path.join(major_path, minor_class)
-                minor_train_images = []
-                minor_test_images = []
-                file_names = os.listdir(minor_path)
-                for index, file_name in enumerate(file_names):
-                    if 'properties' in file_name:
-                        boxes = self.boxDictionary(os.path.join(minor_path, file_name))
-                    else:
-                        image = pil_image.open(os.path.join(minor_path, file_name))
-                        file_name = file_name.split('.')[0]
-                        file_name = file_name.lower()
-                        if len(boxes[file_name]) != 0:
-                            image = self.crop(image, boxes[file_name])
-
-                        if self.isTrainIndex(index, len(file_names)-1):
-                            minor_train_images.append(image)
-                        else:
-                            minor_test_images.append(image)
-
-                major_train_dictionry[minor_class] = minor_train_images
-                major_test_dictionry[minor_class] = minor_test_images
-            train_images[major_class] = major_train_dictionry
-            test_images[major_class] = major_test_dictionry
-        return train_images, test_images
-
-    def isTrainIndex(self, index, total_count):
-        return total_count * 0.8 >= index
+    def __init__(self, images, labels, isTrain=True):
+        self.images = images
+        self.labels = labels
+        self.isTrain = isTrain
 
     def __getitem__(self, index):
-        return self.transforms(self.train_set[index]), self.transforms(self.test_set[index])
+        return transform(self.images[index]), torch.Tensor(self.labels[index])
 
     def __len__(self):
         return len(self.images)
+
+class ImageData:
+    def __init__(self):
+        self.__train_images, self.__train_labels, self.__test_images, self.__test_labels  = self.loadImage(ROOT_PATH)
+
+    def trainDataSet(self):
+        return ImageDataSet(self.__train_images, self.__train_labels)
+
+    def testDataSet(self):
+        return ImageDataSet(self.__test_images, self.__test_labels, False)
+
+    def loadImage(self, root_path):
+        print('Load images...')
+        train_images = []
+        train_labels = []
+        test_images = []
+        test_labels = []
+        boxes = defaultdict()
+        for major_class in tqdm(os.listdir(root_path)):
+            major_path = os.path.join(root_path, major_class)
+            for minor_class in tqdm(os.listdir(major_path)):
+                minor_path = os.path.join(major_path, minor_class)
+                file_names = os.listdir(minor_path)
+                for index, file_name in tqdm(enumerate(file_names)):
+                    if index > 200:
+                        continue
+                    if 'properties' in file_name:
+                        boxes = self.boxDictionary(os.path.join(minor_path, file_name))
+                    elif 'jpg' in file_name:
+                        image_file = pil_image.open(os.path.join(minor_path, file_name))
+                        file_name = file_name.split('.')[0]
+                        file_name = file_name.lower()
+                        class_number = int(file_name.split('_')[1])
+                        if file_name in boxes != 0:
+                            image_file = self.crop(image_file, boxes[file_name])
+
+                        image = np.array(image_file)
+                        if self.isTrainIndex(index, len(file_names)-1):
+                            train_images.append(image)
+                            train_labels.append(class_number)
+                        else:
+                            test_images.append(image)
+                            test_labels.append(class_number)
+        print('Finished load image.')
+        return train_images, train_labels, test_images, test_labels
+
+    def isTrainIndex(self, index, total_count):
+        return total_count * 0.8 >= index
 
     def showImage(self, images):
         rows = 1
@@ -68,9 +87,10 @@ class ImageDataSet(Dataset):
         plt.show()
 
     def crop(self, image, box):
-        box = list(map(int, box))
         if len(box) != 4:
             return image
+        box = list(map(int, box))
+
         return image.crop(tuple(box))
 
     def boxDictionary(self, name):
@@ -86,4 +106,4 @@ class ImageDataSet(Dataset):
 
 
 if __name__ == "__main__":
-    loader = ImageDataSet(ROOT_PATH)
+    print()
