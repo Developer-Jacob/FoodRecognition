@@ -29,10 +29,11 @@ class Teacher:
         for student in self.students:
             self.train(student)
             accuracy = self.test(student.network)
-            if accuracy > max_accuracy:
-                student.save()
+            # if accuracy > max_accuracy:
+                # student.save()
 
     def train(self, student):
+        print('Start training')
         network = student.network
         optimizer = student.optimizer
         criterion = student.criterion
@@ -42,7 +43,8 @@ class Teacher:
             train_loss = 0.0
             correct = 0
             total = 0
-            for index, (images, labels) in enumerate(self.train_loader):
+            count = 0
+            for inner_index, (images, labels) in enumerate(self.train_loader):
                 images = images.to(device)
                 labels = labels.to(device)
                 optimizer.zero_grad()
@@ -50,15 +52,18 @@ class Teacher:
                 loss = criterion(outputs, labels)
                 loss.backward()
                 optimizer.step()
+
                 train_loss += loss.item()
-                _, predicted = outputs.max(1)
-                total += labels.size(0)
-                correct += predicted.eq(labels).sum().item()
+                pred = outputs.argmax(dim=1, keepdim=True)
+                del loss
+                del outputs
+                count += 1
             time_elapsed = time.time() - since
-            print('Epoch: {} Loss: {}, Accuracy: {}, RunningTime: {}m {}s'.format(index+1, train_loss, (100.0*correct/total), time_elapsed // 60, time_elapsed % 60))
+            print('Epoch: {} Loss: {}  RunningTime: {}m {}s'.format(index+1, train_loss/count, time_elapsed // 60, time_elapsed % 60))
 
 
     def test(self, network):
+        print('Start testing')
         correct = 0.0
         total = 0.0
         with torch.no_grad():
@@ -72,4 +77,3 @@ class Teacher:
         accuracy = 100.0 * correct / total
         print('Accuracy of the network on the 10000 test images: %f %%' % (100.0 * correct / total))
         return accuracy
-
