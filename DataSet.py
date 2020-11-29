@@ -9,16 +9,15 @@ import torchvision.transforms as transforms
 import numpy as np
 from tqdm import tqdm
 import time
-vipshome = 'c:\\vips-dev-8.10\\bin'
-
-import os
-os.environ['PATH'] = vipshome + ';' + os.environ['PATH']
-import pyvips
+# vipshome = 'c:\\vips-dev-8.10\\bin'
+#
+# import os
+# os.environ['PATH'] = vipshome + ';' + os.environ['PATH']
 
 
 # LOCAL_ROOT_PATH = "D:/kfood"
 LOCAL_ROOT_PATH = "C:/Users/lim/Desktop/kfood"
-COLAB_ROOT_PATH = "/content/gdrive/My Drive/FoodRecognition/kfood"
+COLAB_ROOT_PATH = "/content/gdrive/My Drive/kfood"
 
 transform = transforms.Compose([transforms.ToPILImage(),
                                 transforms.Resize((224,224)),

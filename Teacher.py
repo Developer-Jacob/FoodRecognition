@@ -22,16 +22,15 @@ class Student:
         print('save')
 
 class Teacher:
-    def __init__(self, students, train_loader, test_loader):
-        self.students = students
+    def __init__(self, student, train_loader, test_loader):
+        self.student = student
         self.train_loader = train_loader
         self.test_loader = test_loader
 
     def teach(self):
         max_accuracy = 0.0
-        for student in self.students:
-            self.train(student)
-            accuracy = self.test(student.network)
+        self.train(self.student)
+        accuracy = self.test(self.student.network)
             # if accuracy > max_accuracy:
                 # student.save()
 
