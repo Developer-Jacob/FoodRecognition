@@ -1,6 +1,9 @@
 import torch
 import time
 import torchvision
+import matplotlib.pyplot as plt
+import numpy as np
+plt.ion()
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
@@ -37,6 +40,7 @@ class Teacher:
         network = student.network
         optimizer = student.optimizer
         criterion = student.criterion
+        print(network, criterion, optimizer)
         since = time.time()
         network.train()
         for index, epoch in enumerate(range(student.epoch)):
@@ -62,7 +66,7 @@ class Teacher:
             print('Epoch: {} Loss: {}  RunningTime: {}m {}s'.format(index+1, train_loss/count, time_elapsed // 60, time_elapsed % 60))
 
 
-    def test(self, network):
+    def test(self, network, num_images=6):
         print('Start testing')
         correct = 0.0
         total = 0.0
@@ -71,9 +75,48 @@ class Teacher:
                 images, labels = data
                 images, labels = images.to(device), labels.to(device)
                 outputs = network(images)
-                _, predicted = torch.max(outputs.data, 1)
+                _, predicted = torch.max(outputs, 1)
                 total += labels.size(0)
                 correct += (predicted == labels).sum().item()
         accuracy = 100.0 * correct / total
         print('Accuracy of the network on the 10000 test images: %f %%' % (100.0 * correct / total))
         return accuracy
+
+    # def visualize_model(self, model, num_images=6):
+    #     was_training = model.training
+    #     model.eval()
+    #     images_so_far = 0
+    #     fig = plt.figure()
+    #
+    #     with torch.no_grad():
+    #         for i, (inputs, labels) in enumerate(self.test_loader):
+    #             inputs = inputs.to(device)
+    #             labels = labels.to(device)
+    #
+    #             outputs = model(inputs)
+    #             _, preds = torch.max(outputs, 1)
+    #
+    #             for j in range(inputs.size()[0]):
+    #                 images_so_far += 1
+    #                 ax = plt.subplot(num_images // 2, 2, images_so_far)
+    #                 ax.axis('off')
+    #                 ax.set_title('predicted: {}'.format(class_names[preds[j]]))
+    #                 self.imshow(inputs.cpu().data[j])
+    #
+    #                 if images_so_far == num_images:
+    #                     model.train(mode=was_training)
+    #                     return
+    #         model.train(mode=was_training)
+
+
+    def imshow(self, inp, title=None):
+        """Imshow for Tensor."""
+        inp = inp.numpy().transpose((1, 2, 0))
+        mean = np.array([0.485, 0.456, 0.406])
+        std = np.array([0.229, 0.224, 0.225])
+        inp = std * inp + mean
+        inp = np.clip(inp, 0, 1)
+        plt.imshow(inp)
+        if title is not None:
+            plt.title(title)
+        plt.pause(0.001)  # 갱신이 될 때까지 잠시 기다립니다.
