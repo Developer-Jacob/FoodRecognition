@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a0cf3239-6ee7-4e16-ab8d-96259124d954" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodRecognition/DataLoader.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodRecognition/DataSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/FoodRecognition/DataSet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodRecognition/Teacher.py" beforeDir="false" afterPath="$PROJECT_DIR$/FoodRecognition/Teacher.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FoodRecognition/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/FoodRecognition/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JupyterTrust" id="f09dcad1-01b9-4cda-8ff7-3c26186d712c" />
   <component name="ProjectId" id="1kicxImDGgZmoxIqxXAk2rq5jKo" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -128,6 +126,8 @@
       <workItem from="1606360945252" duration="1927000" />
       <workItem from="1606364280240" duration="1066000" />
       <workItem from="1606365903011" duration="26293000" />
+      <workItem from="1606470468724" duration="830000" />
+      <workItem from="1606634502853" duration="2665000" />
     </task>
     <servers />
   </component>
@@ -175,10 +175,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="554" y="216" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606365193433" />
-    <state x="1004" y="0" width="903" height="1019" key="dock-window-1" timestamp="1606400838518">
+    <state x="1004" y="0" width="903" height="1019" key="dock-window-1" timestamp="1606634922063">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1004" y="0" width="903" height="1019" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1606400838518" />
+    <state x="1004" y="0" width="903" height="1019" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1606634922063" />
     <state x="705" y="166" width="1101" height="843" key="dock-window-2" timestamp="1606321123891">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
