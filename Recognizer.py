@@ -15,7 +15,7 @@ KEY_EPOCH = "epoch"
 class Recognizer():
 
     def imageLoad(self, batch_size):
-        image_data = ds.ImageData()
+        image_data = ds.ImageData(True)
         train_loader = DataLoader(image_data.trainDataSet(), batch_size=batch_size, num_workers=0)
         test_loader = DataLoader(image_data.testDataSet(), batch_size=1, num_workers=0)
         return train_loader, test_loader

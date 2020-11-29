@@ -17,7 +17,7 @@ import time
 
 # LOCAL_ROOT_PATH = "D:/kfood"
 LOCAL_ROOT_PATH = "C:/Users/lim/Desktop/kfood"
-COLAB_ROOT_PATH = "/content/gdrive/My Drive/kfood"
+COLAB_ROOT_PATH = "/content/mnt/My Drive/Kfood"
 
 transform = transforms.Compose([transforms.ToPILImage(),
                                 transforms.Resize((224,224)),
