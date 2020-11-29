@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0cf3239-6ee7-4e16-ab8d-96259124d954" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/FoodRecognition/Recognizer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodRecognition/DataSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/FoodRecognition/DataSet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodRecognition/Teacher.py" beforeDir="false" afterPath="$PROJECT_DIR$/FoodRecognition/Teacher.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FoodRecognition/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/FoodRecognition/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +129,7 @@
       <workItem from="1606365903011" duration="26293000" />
       <workItem from="1606470468724" duration="830000" />
       <workItem from="1606634502853" duration="7299000" />
-      <workItem from="1606643406900" duration="7611000" />
+      <workItem from="1606643406900" duration="8686000" />
     </task>
     <servers />
   </component>
@@ -178,10 +177,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="554" y="216" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606365193433" />
-    <state x="1155" y="0" width="781" height="1019" key="dock-window-1" timestamp="1606649386738">
+    <state x="161" y="26" width="781" height="1019" key="dock-window-1" timestamp="1606651349153">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1155" y="0" width="781" height="1019" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1606649386738" />
+    <state x="161" y="26" width="781" height="1019" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1606651349153" />
     <state x="705" y="166" width="1101" height="843" key="dock-window-2" timestamp="1606321123891">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
