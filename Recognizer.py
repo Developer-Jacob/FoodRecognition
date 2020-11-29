@@ -1,7 +1,7 @@
 from torch.utils.data import DataLoader
-import FoodRecognition.DataSet as DataSet
-from FoodRecognition.Teacher import Student
-from FoodRecognition.Teacher import Teacher
+import DataSet as DataSet
+from Teacher import Student
+from Teacher import Teacher
 
 KEY_OPTIMIZER = "optimizer"
 KEY_CRITERION = "criterion"

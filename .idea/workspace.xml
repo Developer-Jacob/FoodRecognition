@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0cf3239-6ee7-4e16-ab8d-96259124d954" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/FoodRecognition.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodRecognition/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodRecognition/.idea/FoodRecognition.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodRecognition/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodRecognition/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodRecognition/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodRecognition/DataSet.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodRecognition/Recognizer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodRecognition/Teacher.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodRecognition/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +33,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.main (1)">
     <configuration name="DataSet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FoodRecognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -91,6 +78,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FoodRecognition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FoodRecognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -115,6 +124,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.DataSet" />
         <item itemvalue="Python.ImageLoader" />
@@ -142,6 +152,9 @@
       <workItem from="1606470468724" duration="830000" />
       <workItem from="1606634502853" duration="7299000" />
       <workItem from="1606643406900" duration="10228000" />
+      <workItem from="1606654400166" duration="41000" />
+      <workItem from="1606654445943" duration="27000" />
+      <workItem from="1606654512643" duration="74000" />
     </task>
     <servers />
   </component>
@@ -149,26 +162,26 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="455" y="276" key="FileChooserDialogImpl" timestamp="1606353357486">
+    <state x="455" y="276" key="FileChooserDialogImpl" timestamp="1606654442613">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="455" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606353357486" />
-    <state width="1302" height="327" key="GridCell.Tab.0.bottom" timestamp="1606654101856">
+    <state x="455" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606654442613" />
+    <state width="853" height="220" key="GridCell.Tab.0.bottom" timestamp="1606654573275">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1302" height="327" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606654101856" />
-    <state width="1302" height="327" key="GridCell.Tab.0.center" timestamp="1606654101856">
+    <state width="853" height="220" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606654573275" />
+    <state width="853" height="220" key="GridCell.Tab.0.center" timestamp="1606654573275">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1302" height="327" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606654101856" />
-    <state width="1302" height="327" key="GridCell.Tab.0.left" timestamp="1606654101855">
+    <state width="853" height="220" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606654573275" />
+    <state width="853" height="220" key="GridCell.Tab.0.left" timestamp="1606654573274">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1302" height="327" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606654101855" />
-    <state width="1302" height="327" key="GridCell.Tab.0.right" timestamp="1606654101856">
+    <state width="853" height="220" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606654573274" />
+    <state width="853" height="220" key="GridCell.Tab.0.right" timestamp="1606654573275">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1302" height="327" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606654101856" />
+    <state width="853" height="220" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606654573275" />
     <state width="1302" height="327" key="GridCell.Tab.1.bottom" timestamp="1606654101856">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -221,6 +234,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FoodRecognition$DataSet.coverage" NAME="DataSet Coverage Results" MODIFIED="1606324146355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FoodRecognition" />
+    <SUITE FILE_PATH="coverage/FoodRecognition$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1606654615067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FoodRecognition$ImageLoader.coverage" NAME="ImageLoader Coverage Results" MODIFIED="1606317292369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FoodRecognition" />
     <SUITE FILE_PATH="coverage/FoodRecognition$main.coverage" NAME="main Coverage Results" MODIFIED="1606650027067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FoodRecognition" />
   </component>

@@ -2,7 +2,7 @@ import torch
 import torchvision.models as Models
 import torch.optim as optim
 import torch.nn as nn
-import FoodRecognition.Recognizer as Recognizer
+import Recognizer
 if __name__ == "__main__":
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     if torch.cuda.is_available():
