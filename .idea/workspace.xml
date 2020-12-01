@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0cf3239-6ee7-4e16-ab8d-96259124d954" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ImageDataSet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageLoader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Leanring.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataSet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recognizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recognizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recognizer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teacher.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +39,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lim\Documents\FoodRecognition" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FoodRecognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -57,9 +67,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FoodRecognition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -86,7 +119,12 @@
       <workItem from="1606643406900" duration="10228000" />
       <workItem from="1606654400166" duration="41000" />
       <workItem from="1606654445943" duration="27000" />
-      <workItem from="1606654512643" duration="8257000" />
+      <workItem from="1606654512643" duration="21766000" />
+      <workItem from="1606712521521" duration="8975000" />
+      <workItem from="1606744160163" duration="650000" />
+      <workItem from="1606745457514" duration="1121000" />
+      <workItem from="1606802680356" duration="653000" />
+      <workItem from="1606822705494" duration="2605000" />
     </task>
     <servers />
   </component>
@@ -98,62 +136,66 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606657373267" />
-    <state x="673" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606657159783">
+    <state x="673" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606824391336">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="673" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1606657159783" />
-    <state x="455" y="276" key="FileChooserDialogImpl" timestamp="1606654442613">
+    <state x="673" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1606824391336" />
+    <state x="278" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606824409758">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="455" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606654442613" />
-    <state width="1401" height="327" key="GridCell.Tab.0.bottom" timestamp="1606662847398">
+    <state x="278" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606824409758" />
+    <state x="455" y="276" key="FileChooserDialogImpl" timestamp="1606802715979">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1401" height="327" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606662847398" />
-    <state width="1401" height="327" key="GridCell.Tab.0.center" timestamp="1606662847398">
+    <state x="455" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606802715979" />
+    <state width="1168" height="324" key="GridCell.Tab.0.bottom" timestamp="1606825294629">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1401" height="327" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606662847398" />
-    <state width="1401" height="327" key="GridCell.Tab.0.left" timestamp="1606662847398">
+    <state width="1168" height="324" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606825294629" />
+    <state width="1168" height="324" key="GridCell.Tab.0.center" timestamp="1606825294629">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1401" height="327" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606662847398" />
-    <state width="1401" height="327" key="GridCell.Tab.0.right" timestamp="1606662847398">
+    <state width="1168" height="324" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606825294629" />
+    <state width="1168" height="324" key="GridCell.Tab.0.left" timestamp="1606825294629">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1401" height="327" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606662847398" />
-    <state width="1401" height="327" key="GridCell.Tab.1.bottom" timestamp="1606662855716">
+    <state width="1168" height="324" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606825294629" />
+    <state width="1168" height="324" key="GridCell.Tab.0.right" timestamp="1606825294629">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1401" height="327" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606662855716" />
-    <state width="1401" height="327" key="GridCell.Tab.1.center" timestamp="1606662855716">
+    <state width="1168" height="324" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606825294629" />
+    <state width="1168" height="324" key="GridCell.Tab.1.bottom" timestamp="1606825294629">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1401" height="327" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606662855716" />
-    <state width="1401" height="327" key="GridCell.Tab.1.left" timestamp="1606662855716">
+    <state width="1168" height="324" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606825294629" />
+    <state width="1168" height="324" key="GridCell.Tab.1.center" timestamp="1606825294629">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1401" height="327" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606662855716" />
-    <state width="1401" height="327" key="GridCell.Tab.1.right" timestamp="1606662855716">
+    <state width="1168" height="324" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606825294629" />
+    <state width="1168" height="324" key="GridCell.Tab.1.left" timestamp="1606825294629">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1401" height="327" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606662855716" />
+    <state width="1168" height="324" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606825294629" />
+    <state width="1168" height="324" key="GridCell.Tab.1.right" timestamp="1606825294629">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1168" height="324" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606825294629" />
     <state x="554" y="216" key="SettingsEditor" timestamp="1606365193433">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="554" y="216" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606365193433" />
-    <state x="161" y="26" width="781" height="1019" key="dock-window-1" timestamp="1606651349153">
+    <state x="716" y="4" width="1166" height="1019" key="dock-window-1" timestamp="1606825316760">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="161" y="26" width="781" height="1019" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1606651349153" />
+    <state x="716" y="4" width="1166" height="1019" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1606825316760" />
     <state x="705" y="166" width="1101" height="843" key="dock-window-2" timestamp="1606321123891">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="705" y="166" width="1101" height="843" key="dock-window-2/0.0.1920.1040@0.0.1920.1040" timestamp="1606321123891" />
-    <state x="261" y="233" width="672" height="678" key="search.everywhere.popup" timestamp="1606370720344">
+    <state x="261" y="233" width="672" height="678" key="search.everywhere.popup" timestamp="1606663988902">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="261" y="233" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606370720344" />
+    <state x="261" y="233" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606663988902" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -164,19 +206,9 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/DataSet.py</url>
-          <line>48</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/DataSet.py</url>
-          <line>44</line>
+          <url>file://$PROJECT_DIR$/ImageLoader.py</url>
+          <line>20</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/DataSet.py</url>
-          <line>42</line>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -184,6 +216,9 @@
       <configuration name="PythonConfigurationType">
         <watch expression="file_name" language="Python" />
         <watch expression="file_name in boxes" language="Python" />
+        <watch expression="os.listdir(root_path)" language="Python" />
+        <watch expression="os.listdir(major_path)" language="Python" />
+        <watch expression="minor_class in load_minor_classes" language="Python" />
       </configuration>
     </watches-manager>
   </component>
@@ -191,6 +226,7 @@
     <SUITE FILE_PATH="coverage/FoodRecognition$DataSet.coverage" NAME="DataSet Coverage Results" MODIFIED="1606324146355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FoodRecognition" />
     <SUITE FILE_PATH="coverage/FoodRecognition$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1606655637165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FoodRecognition$ImageLoader.coverage" NAME="ImageLoader Coverage Results" MODIFIED="1606317292369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FoodRecognition" />
-    <SUITE FILE_PATH="coverage/FoodRecognition$main.coverage" NAME="main Coverage Results" MODIFIED="1606662846427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FoodRecognition$test.coverage" NAME="test Coverage Results" MODIFIED="1606824712637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FoodRecognition$main.coverage" NAME="main Coverage Results" MODIFIED="1606825535942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
