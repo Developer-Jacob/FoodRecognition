@@ -71,10 +71,12 @@ def visualize_model(model, test_loader, class_names, num_images=6):
 
                 if images_so_far == num_images:
                     model.train(mode=was_training)
+                    print('Accuracy of the network on the 10000 test images: %d %%' % (
+                            100 * correct / total))
                     return
-        print('Accuracy of the network on the 10000 test images: %d %%' % (
-    100 * correct / total))
         model.train(mode=was_training)
+        print('Accuracy of the network on the 10000 test images: %d %%' % (
+                100 * correct / total))
 
 def imshow(inp, title=None):
     """Imshow for Tensor."""
