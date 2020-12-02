@@ -20,15 +20,15 @@ def loadImage(root_path, load_minor_classes):
     for i, major_class in tqdm(enumerate(os.listdir(root_path))):
         major_path = os.path.join(root_path, major_class)
         for index, minor_class in enumerate(os.listdir(major_path)):
-            if not(minor_class in load_minor_classes):
-                continue
             minor_path = os.path.join(major_path, minor_class)
             file_names = os.listdir(minor_path)
             properties_file = os.path.join(minor_path, 'crop_area.properties')
             boxes = boxDictionary(properties_file)
             for inner_index, file_name in enumerate(file_names):
-                if 'jpg' in file_name:
+                if 'jpg' in file_name.lower() or 'png' in file_name.lower():
                     class_number = int(file_name.split('_')[1])
+                    if not (class_number in load_minor_classes):
+                        break
                     image_file = Image.open(os.path.join(minor_path, file_name)).convert('RGB')
                     file_name = file_name.split('.')[0]
                     file_name = file_name.lower()
