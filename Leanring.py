@@ -1,11 +1,12 @@
-import  time
-import  copy
-import  torch
+import time
+import copy
+import torch
 import matplotlib.pyplot as plt
 import numpy as np
 import random
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
 
 def train_model(network, criterion, optimizer, scheduler, epoch, train_loader, data_count):
     network.train()
@@ -35,7 +36,7 @@ def train_model(network, criterion, optimizer, scheduler, epoch, train_loader, d
         epoch_loss = train_loss / data_count
         epoch_acc = train_acc.double() / data_count
 
-        print('Epoch: {} Loss: {}  Acc: {}'.format(index+1, epoch_loss, epoch_acc))
+        print('Epoch: {} Loss: {}  Acc: {}'.format(index + 1, epoch_loss, epoch_acc))
         if epoch_acc > best_acc:
             best_acc = epoch_acc
             best_model = copy.deepcopy(network.state_dict())
@@ -45,6 +46,7 @@ def train_model(network, criterion, optimizer, scheduler, epoch, train_loader, d
     print('Best val Acc: {:4f}'.format(best_acc))
     network.load_state_dict(best_model)
     return network
+
 
 def test_model(model, test_loader):
     was_training = model.training
@@ -63,6 +65,7 @@ def test_model(model, test_loader):
         model.train(mode=was_training)
         print('Accuracy of the network on the 10000 test images: %d %%' % (100 * correct / total))
 
+
 def visualize_model(model, random_loader, class_names):
     model.eval()
     fig = plt.figure()
@@ -72,11 +75,13 @@ def visualize_model(model, random_loader, class_names):
             labels = labels.to(device)
 
             outputs = model(inputs)
-            _, preds = torch.max(outputs, 1)
+            _, predictions = torch.max(outputs, 1)
 
             for j in range(inputs.size()[0]):
-                index = int(preds[j])
-                imshow(inputs.cpu().data[j], class_names[index])
+                prediction = class_names[int(predictions[j])]
+                real = class_names[labels[j]]
+                imshow(inputs.cpu().data[j], "Value: {}, Prediction: {}".format(real, prediction))
+
 
 
 def imshow(inp, title=None):
