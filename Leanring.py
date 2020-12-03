@@ -79,7 +79,7 @@ def visualize_model(model, random_loader, class_names):
 
             for j in range(inputs.size()[0]):
                 prediction = class_names[int(predictions[j])]
-                real = class_names[labels[j]]
+                real = class_names[int(labels[j])]
                 imshow(inputs.cpu().data[j], "Value: {}, Prediction: {}".format(real, prediction))
 
 
