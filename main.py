@@ -17,6 +17,8 @@ if __name__ == "__main__":
     train_loader = torch.utils.data.DataLoader(train_set, batch_size=8, num_workers=0, shuffle=True)
     test_set = ds.ImageDataSet(test, test_label)
     test_loader = torch.utils.data.DataLoader(test_set, batch_size=1, num_workers=0, shuffle=True)
+    random_set = ds.RandomDataSet(test, test_label, 3)
+    random_loader = torch.utils.data.DataLoader(random_set, batch_size=1, num_workers=0, shuffle=False)
 
     model_ft = models.resnet18(pretrained=True)
     num_ftrs = model_ft.fc.in_features
@@ -40,6 +42,9 @@ if __name__ == "__main__":
                               train_loader,
                               len(train_set))
 
+    lr.test_model(model_ft,
+                       test_loader)
+
     lr.visualize_model(model_ft,
-                       test_loader,
-                       load_minor_classes)
+                    random_loader,
+                    load_minor_classes)
