@@ -20,9 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0cf3239-6ee7-4e16-ab8d-96259124d954" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/FoodRecognition.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FoodRecognition.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageDataSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageDataSet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Leanring.py" beforeDir="false" afterPath="$PROJECT_DIR$/Leanring.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
