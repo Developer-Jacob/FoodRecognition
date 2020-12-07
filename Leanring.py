@@ -3,12 +3,11 @@ import copy
 import torch
 import matplotlib.pyplot as plt
 import numpy as np
-import random
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 
-def train_model(network, criterion, optimizer, scheduler, epoch, train_loader, data_count):
+def train_model(network, criterion, optimizer, scheduler, epoch, train_loader, printLog=True):
     network.train()
     network.to(device)
     since = time.time()
@@ -31,18 +30,17 @@ def train_model(network, criterion, optimizer, scheduler, epoch, train_loader, d
             optimizer.step()
             train_loss += loss.item() * images.size(0)
             train_acc += torch.sum(preds == labels.data)
-            count += 1
+            count += len(images)
         scheduler.step()
-        epoch_loss = train_loss / data_count
-        epoch_acc = train_acc.double() / data_count
-
-        print('Epoch: {} Loss: {}  Acc: {}'.format(index + 1, epoch_loss, epoch_acc))
+        epoch_loss = train_loss / count
+        epoch_acc = train_acc.double() / count
+        if printLog:
+            print('Epoch: {} Loss: {:.3f}  Acc: {}'.format(index + 1, epoch_loss, epoch_acc))
         if epoch_acc > best_acc:
             best_acc = epoch_acc
             best_model = copy.deepcopy(network.state_dict())
     time_elapsed = time.time() - since
-    print('Training complete in {:.0f}m {:.0f}s'.format(
-        time_elapsed // 60, time_elapsed % 60))
+    print('Training complete in {:.0f}m {:.0f}s'.format(time_elapsed // 60, time_elapsed % 60))
     print('Best val Acc: {:4f}'.format(best_acc))
     network.load_state_dict(best_model)
     return network
@@ -83,23 +81,10 @@ def visualize_model(model, random_loader, class_names):
                 imshow(inputs.cpu().data[j], "Value: {}, Prediction: {}".format(real, prediction))
 
 
-
 def imshow(inp, title=None):
     """Imshow for Tensor."""
     inp = inp.numpy().transpose((1, 2, 0))
-    mean = np.array([0.485, 0.456, 0.406])
-    std = np.array([0.229, 0.224, 0.225])
-    inp = std * inp + mean
-    inp = np.clip(inp, 0, 1)
     plt.imshow(inp)
     if title is not None:
         plt.title(title)
     plt.pause(0.001)  # 갱신이 될 때까지 잠시 기다립니다.
-
-    # for j in range(inputs.size()[0]):
-    #     images_so_far += 1
-    #     ax = plt.subplot(num_images // 2, 2, images_so_far)
-    #     ax.axis('off')
-    #     index = int(preds[j])
-    #     ax.set_title('predicted: {}'.format(class_names[index]))
-    #     imshow(inputs.cpu().data[j])

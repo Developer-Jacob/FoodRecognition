@@ -16,10 +16,13 @@ def loadImage(root_path, load_minor_classes):
     test_images = []
     test_labels = []
     boxes = defaultdict()
-
     for i, major_class in tqdm(enumerate(os.listdir(root_path))):
+        if major_class in '.DS_Store':
+            continue
         major_path = os.path.join(root_path, major_class)
         for index, minor_class in enumerate(os.listdir(major_path)):
+            if minor_class in '.DS_Store':
+                continue
             minor_path = os.path.join(major_path, minor_class)
             file_names = os.listdir(minor_path)
             properties_file = os.path.join(minor_path, 'crop_area.properties')
