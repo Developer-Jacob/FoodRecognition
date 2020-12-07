@@ -19,7 +19,7 @@ class ImageDataSet(Dataset):
     def __getitem__(self, index):
         default_image = self.images[index//len(self.input_transforms)]
         default_image = transforms.ToPILImage()(default_image)
-        input_transform = self.input_transforms[index%len(self.input_transforms)]
+        input_transform = self.input_transforms[index % len(self.input_transforms)]
         image = input_transform(default_image)
         image = transforms.ToTensor()(image)
         image = transforms.Resize((224, 224))(image)

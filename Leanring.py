@@ -35,7 +35,9 @@ def train_model(network, criterion, optimizer, scheduler, epoch, train_loader, p
         epoch_loss = train_loss / count
         epoch_acc = train_acc.double() / count
         if printLog:
-            print('Epoch: {} Loss: {:.3f}  Acc: {}'.format(index + 1, epoch_loss, epoch_acc))
+            epoch_time_elapsed = time.time() - since
+            print('Epoch: {} Loss: {:.3f}  Acc: {:.4f} Time: {:.0f}m {:.0f}s'
+                  .format(index + 1, epoch_loss, epoch_acc, epoch_time_elapsed // 60, epoch_time_elapsed % 60))
         if epoch_acc > best_acc:
             best_acc = epoch_acc
             best_model = copy.deepcopy(network.state_dict())

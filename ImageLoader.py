@@ -16,11 +16,11 @@ def loadImage(root_path, load_minor_classes):
     test_images = []
     test_labels = []
     boxes = defaultdict()
-    for i, major_class in tqdm(enumerate(os.listdir(root_path))):
+    for i, major_class in enumerate(os.listdir(root_path)):
         if major_class in '.DS_Store':
             continue
         major_path = os.path.join(root_path, major_class)
-        for index, minor_class in enumerate(os.listdir(major_path)):
+        for index, minor_class in tqdm(enumerate(os.listdir(major_path)), desc=major_class):
             if minor_class in '.DS_Store':
                 continue
             minor_path = os.path.join(major_path, minor_class)
