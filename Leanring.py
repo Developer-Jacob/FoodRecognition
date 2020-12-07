@@ -19,6 +19,7 @@ def train_model(network, criterion, optimizer, scheduler, epoch, train_loader, p
         correct = 0
         total = 0
         count = 0
+        epoch_since = time.time()
         for inner_index, (images, labels) in enumerate(train_loader):
             images = images.to(device)
             labels = labels.to(device)
@@ -35,7 +36,7 @@ def train_model(network, criterion, optimizer, scheduler, epoch, train_loader, p
         epoch_loss = train_loss / count
         epoch_acc = train_acc.double() / count
         if printLog:
-            epoch_time_elapsed = time.time() - since
+            epoch_time_elapsed = time.time() - epoch_since
             print('Epoch: {} Loss: {:.3f}  Acc: {:.4f} Time: {:.0f}m {:.0f}s'
                   .format(index + 1, epoch_loss, epoch_acc, epoch_time_elapsed // 60, epoch_time_elapsed % 60))
         if epoch_acc > best_acc:

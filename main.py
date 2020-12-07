@@ -22,9 +22,8 @@ transform_list = [
 if __name__ == "__main__":
     train, train_label, test, test_label = loader.loadImage('./kfood', [0, 1])
     train_set = ds.ImageDataSet(train, train_label, transform_list, normalize)
-    print('train_image', len(train_set))
     train_loader = torch.utils.data.DataLoader(train_set, batch_size=8, num_workers=0, shuffle=True)
-    test_set = ds.ImageDataSet(test, test_label, [], None)
+    test_set = ds.ImageDataSet(test, test_label)
     test_loader = torch.utils.data.DataLoader(test_set, batch_size=1, num_workers=0, shuffle=True)
     random_set = ds.RandomDataSet(test, test_label, 3)
     random_loader = torch.utils.data.DataLoader(random_set, batch_size=1, num_workers=0, shuffle=False)
