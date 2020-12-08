@@ -10,29 +10,19 @@ transform = transforms.Compose([transforms.ToPILImage(),
 
 
 class ImageDataSet(Dataset):
-    def __init__(self, images, labels, input_transforms=[], normalize=None):
+    def __init__(self, images, labels, isTrain=True):
         self.images = images
         self.labels = labels
-        self.normalize = normalize
-        self.input_transforms = input_transforms
+        self.isTrain = isTrain
 
     def __getitem__(self, index):
-        subIndex = len(self.input_transforms) + 1
-        default_image = self.images[index//subIndex]
-        image = transforms.ToPILImage()(default_image)
-        if index % subIndex != len(self.input_transforms):
-            input_transform = self.input_transforms[index % subIndex]
-            image = input_transform(image)
-        image = transforms.ToTensor()(image)
-        image = transforms.Resize((224, 224))(image)
-
-        if self.normalize is not None:
-            return self.normalize(image), self.labels[index//subIndex]
+        if self.isTrain:
+            return transforms.ToTensor()(self.images[index]), self.labels[index]
         else:
-            return image, self.labels[index//subIndex]
+            return transform(self.images[index]), self.labels[index]
 
     def __len__(self):
-        return len(self.images) * (len(self.input_transforms) + 1)
+        return len(self.images)
 
 
 class RandomDataSet(Dataset):

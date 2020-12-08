@@ -7,24 +7,30 @@ import ImageLoader as loader
 import ImageDataSet as ds
 import Leanring as lr
 from torchvision import transforms
-
+import StaticValue as sv
 load_minor_classes = {0: '갈비구이',
                       1: '갈치구이'}
 
 normalize = transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
 
+
 transform_list = [
-        transforms.RandomVerticalFlip(1),
-        transforms.RandomHorizontalFlip(1),
-        transforms.RandomAffine(30)
-    ]
+    transforms.RandomVerticalFlip(1),
+    transforms.RandomHorizontalFlip(1),
+    transforms.RandomAffine(30),
+]
+
+scales = [256]
 
 if __name__ == "__main__":
     train, train_label, test, test_label = loader.loadImage('./kfood', [0, 1])
-    train_set = ds.ImageDataSet(train, train_label, transform_list, normalize)
+    train, train_label = sv.transformer(train, train_label, transform_list, scales)
+    train_set = ds.ImageDataSet(train, train_label, transform_list)
     train_loader = torch.utils.data.DataLoader(train_set, batch_size=8, num_workers=0, shuffle=True)
+
     test_set = ds.ImageDataSet(test, test_label)
     test_loader = torch.utils.data.DataLoader(test_set, batch_size=1, num_workers=0, shuffle=True)
+
     random_set = ds.RandomDataSet(test, test_label, 3)
     random_loader = torch.utils.data.DataLoader(random_set, batch_size=1, num_workers=0, shuffle=False)
 
@@ -54,5 +60,5 @@ if __name__ == "__main__":
     #                    test_loader)
     #
     lr.visualize_model(model_ft,
-                    random_loader,
-                    load_minor_classes)
+                       random_loader,
+                       load_minor_classes)
