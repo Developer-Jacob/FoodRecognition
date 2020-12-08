@@ -16,8 +16,6 @@ def train_model(network, criterion, optimizer, scheduler, epoch, train_loader, p
     for index, epoch in enumerate(range(epoch)):
         train_loss = 0.0
         train_acc = 0.0
-        correct = 0
-        total = 0
         count = 0
         epoch_since = time.time()
         for inner_index, (images, labels) in enumerate(train_loader):

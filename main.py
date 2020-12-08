@@ -24,11 +24,13 @@ scales = [256]
 
 if __name__ == "__main__":
     train, train_label, test, test_label = loader.loadImage('./kfood', [0, 1])
-    train, train_label = sv.transformer(train, train_label, transform_list, scales)
-    train_set = ds.ImageDataSet(train, train_label, transform_list)
+
+    train, train_label = sv.Transformer(train, train_label).getAllImages(transform_list, scales)
+
+    train_set = ds.ImageDataSet(train, train_label)
     train_loader = torch.utils.data.DataLoader(train_set, batch_size=8, num_workers=0, shuffle=True)
 
-    test_set = ds.ImageDataSet(test, test_label)
+    test_set = ds.ImageDataSet(test, test_label, False)
     test_loader = torch.utils.data.DataLoader(test_set, batch_size=1, num_workers=0, shuffle=True)
 
     random_set = ds.RandomDataSet(test, test_label, 3)
@@ -53,12 +55,11 @@ if __name__ == "__main__":
                               optimizer_ft,
                               exp_lr_scheduler,
                               1,
-                              train_loader,
-                              len(train_set))
+                              train_loader)
 
     # lr.test_model(model_ft,
     #                    test_loader)
     #
-    lr.visualize_model(model_ft,
-                       random_loader,
-                       load_minor_classes)
+    # lr.visualize_model(model_ft,
+    #                    random_loader,
+    #                    load_minor_classes)
