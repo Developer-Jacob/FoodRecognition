@@ -25,7 +25,7 @@ scales = [256]
 if __name__ == "__main__":
     train, train_label, test, test_label = loader.loadImage('./kfood', [0, 1])
 
-    train, train_label = sv.Transformer(train, train_label).getAllImages(transform_list, scales)
+    train, train_label = sv.Transformer(train, train_label).scaledImages(scales)
 
     train_set = ds.ImageDataSet(train, train_label)
     train_loader = torch.utils.data.DataLoader(train_set, batch_size=8, num_workers=0, shuffle=True)

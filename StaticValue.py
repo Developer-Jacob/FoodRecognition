@@ -30,9 +30,9 @@ class Transformer:
         result_labels = []
         for image, label in zip(self.images, self.labels):
             for size in scale_sizes:
-                image = torchvision.transforms.ToPILImage()(image)
-                image = torchvision.transforms.Resize(size)(image)
-                image = torchvision.transforms.CenterCrop((224, 224))(image)
-                result.append(image)
+                pil_image = torchvision.transforms.ToPILImage()(image)
+                pil_image = torchvision.transforms.Resize(size)(pil_image)
+                pil_image = torchvision.transforms.CenterCrop((224, 224))(pil_image)
+                result.append(pil_image)
                 result_labels.append(label)
         return result, result_labels
