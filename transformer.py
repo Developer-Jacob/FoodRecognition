@@ -1,5 +1,6 @@
 import torchvision
-import matplotlib.pylab as plt
+
+
 class Transformer:
     def __init__(self, images, labels):
         self.images = images
@@ -36,3 +37,4 @@ class Transformer:
                 result.append(pil_image)
                 result_labels.append(label)
         return result, result_labels
+

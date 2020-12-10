@@ -14,6 +14,10 @@ class ImageDataSet(Dataset):
         self.images = images
         self.labels = labels
         self.isTrain = isTrain
+        if isTrain:
+            print('Train image data set count : ', len(self.images))
+        else:
+            print('Test image data set count : ', len(self.images))
 
     def __getitem__(self, index):
         if self.isTrain:
