@@ -30,7 +30,8 @@ def train_model(network, criterion, optimizer, scheduler, epoch, train_loader, p
             train_loss += loss.item() * images.size(0)
             train_acc += torch.sum(preds == labels.data)
             count += len(images)
-        scheduler.step()
+        if scheduler != None:
+            scheduler.step()
         epoch_loss = train_loss / count
         epoch_acc = train_acc.double() / count
         if printLog:

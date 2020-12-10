@@ -4,10 +4,10 @@ import torch.nn as nn
 import torch
 from torch.optim import lr_scheduler
 import ImageLoader as loader
-import ImageDataSet as ds
+import imageDataSet as ds
 import Leanring as lr
 from torchvision import transforms
-import StaticValue as sv
+import transformer as sv
 load_minor_classes = {0: '갈비구이',
                       1: '갈치구이'}
 
@@ -23,15 +23,13 @@ transform_list = [
 scales = [256]
 
 if __name__ == "__main__":
-    train, train_label, test, test_label = loader.loadImage('./kfood', [0, 1])
-
-    train, train_label = sv.Transformer(train, train_label).scaledImages(scales)
-
-    train_set = ds.ImageDataSet(train, train_label)
-    train_loader = torch.utils.data.DataLoader(train_set, batch_size=8, num_workers=0, shuffle=True)
-
-    test_set = ds.ImageDataSet(test, test_label, False)
-    test_loader = torch.utils.data.DataLoader(test_set, batch_size=1, num_workers=0, shuffle=True)
+    for minor_class in [0, 1]:
+        train, train_label, test, test_label = loader.loadImage('./kfood', [0, 1])
+        train, train_label = sv.Transformer(train, train_label).getAllImages(transform_list, scales) .scaledImages(scales)
+        train_set = ds.ImageDataSet(train, train_label)
+        train_loader = torch.utils.data.DataLoader(train_set, batch_size=8, num_workers=0, shuffle=True)
+        test_set = ds.ImageDataSet(test, test_label, False)
+        test_loader = torch.utils.data.DataLoader(test_set, batch_size=1, num_workers=0, shuffle=True)
 
     random_set = ds.RandomDataSet(test, test_label, 3)
     random_loader = torch.utils.data.DataLoader(random_set, batch_size=1, num_workers=0, shuffle=False)
@@ -49,7 +47,6 @@ if __name__ == "__main__":
 
     # 7 에폭마다 0.1씩 학습률 감소
     exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=7, gamma=0.1)
-
     model_ft = lr.train_model(model_ft,
                               criterion,
                               optimizer_ft,

@@ -126,5 +126,6 @@ def load(path):
             imshow(inputs.cpu().data[j], "Value: {}".format(int(labels[j])))
 
 if __name__ == '__main__':
+    print()
     # save dictionary = loadImage2('/Users/nhn/Downloads/kfood')
     # load('/Users/nhn/Downloads/kfood/갈비구이.pt')
