@@ -38,14 +38,14 @@ def train_model(network, criterion, optimizer, scheduler, epoch, train_loader, p
             epoch_time_elapsed = time.time() - epoch_since
             print('Epoch: {} Loss: {:.3f}  Acc: {:.4f} Time: {:.0f}m {:.0f}s'
                   .format(index + 1, epoch_loss, epoch_acc, epoch_time_elapsed // 60, epoch_time_elapsed % 60))
-        if epoch_acc > best_acc:
-            best_acc = epoch_acc
-            best_model = copy.deepcopy(network.state_dict())
+        # if epoch_acc > best_acc:
+        #     best_acc = epoch_acc
+        #     best_model = copy.deepcopy(network.state_dict())
     time_elapsed = time.time() - since
     print('Training complete in {:.0f}m {:.0f}s'.format(time_elapsed // 60, time_elapsed % 60))
     print('Best val Acc: {:4f}'.format(best_acc))
-    network.load_state_dict(best_model)
-    return network
+    # network.load_state_dict(best_model)
+    return network, criterion, optimizer
 
 
 def test_model(model, test_loader):
