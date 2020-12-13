@@ -10,10 +10,12 @@ transform = transforms.Compose([transforms.ToPILImage(),
 
 
 class ImageDataSet(Dataset):
-    def __init__(self, images, labels, isTrain=True):
+    def __init__(self, images, labels, trans, isTrain=True):
         self.images = images
         self.labels = labels
+        self.trans = trans
         self.isTrain = isTrain
+
         if isTrain:
             print('Train image data set count : ', len(self.images))
         else:
@@ -21,7 +23,8 @@ class ImageDataSet(Dataset):
 
     def __getitem__(self, index):
         if self.isTrain:
-            return transforms.ToTensor()(self.images[index]), self.labels[index]
+            image = self.trans(self.images[index])
+            return transforms.ToTensor()(image), self.labels[index]
         else:
             return transform(self.images[index]), self.labels[index]
 

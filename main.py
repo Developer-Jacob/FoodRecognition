@@ -14,19 +14,20 @@ load_minor_classes = {0: '갈비구이',
 normalize = transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
 
 
-transform_list = [
+trans1 = transforms.Compose([
+    transforms.ToPILImage(),
+    transforms.Resize((224,224)),
     transforms.RandomVerticalFlip(1),
     transforms.RandomHorizontalFlip(1),
     transforms.RandomAffine(30),
-]
+])
 
 scales = [256]
 
 if __name__ == "__main__":
     for minor_class in [0, 1]:
         train, train_label, test, test_label = loader.loadImage('./kfood', [0, 1])
-        train, train_label = sv.Transformer(train, train_label).getAllImages(transform_list, scales) .scaledImages(scales)
-        train_set = ds.ImageDataSet(train, train_label)
+        train_set = ds.ImageDataSet(train, train_label, trans1)
         train_loader = torch.utils.data.DataLoader(train_set, batch_size=8, num_workers=0, shuffle=True)
         test_set = ds.ImageDataSet(test, test_label, False)
         test_loader = torch.utils.data.DataLoader(test_set, batch_size=1, num_workers=0, shuffle=True)
