@@ -22,6 +22,7 @@ def train_model(network, criterion, optimizer, scheduler, epoch, train_loader, p
             optimizer.zero_grad()
             outputs = network(images)
             _, preds = torch.max(outputs, 1)
+            print(labels[0])
             loss = criterion(outputs, labels)
             loss.backward()
             optimizer.step()
