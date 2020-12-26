@@ -2,10 +2,8 @@ import time
 import copy
 import torch
 import matplotlib.pyplot as plt
-import datetime
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
-
 
 def train_model(network, criterion, optimizer, scheduler, epoch, train_loader, printLog=True):
     network.train()
