@@ -43,7 +43,7 @@ def train_model(network, criterion, optimizer, scheduler, epoch, train_loader, p
     print('Training complete in {:.0f}m {:.0f}s'.format(time_elapsed // 60, time_elapsed % 60))
     print('Best val Acc: {:4f}'.format(best_acc))
     network.load_state_dict(best_model)
-    return network
+    return network, '{:4f}'.format(best_acc)
 
 
 def test_model(model, test_loader):
